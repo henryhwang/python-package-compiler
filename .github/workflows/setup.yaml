@@ -32,11 +32,13 @@ jobs:
         run: |
           docker --version
           uname -r
-          ls /proc/sys/fs/binfmt_misc
+          ls -l /proc/sys/fs/binfmt_misc
           sudo apt-get install -y qemu-user-static
           ls -l /usr/bin/qemu-*-static
+          ls -l /proc/sys/fs/binfmt_misc
           qemu-aarch64-static -version
       - name: Run arm64 debian container
         run: |
+          docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           docker run --rm arm64v8/debian ls -l /
           docker run --rm arm64v8/python python --version
