@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get -yy build-dep python-matplotlib
+          sudo apt-get install -yy build-dep python-matplotlib
       - name: Build package
         run: |
           python -m pip install .
