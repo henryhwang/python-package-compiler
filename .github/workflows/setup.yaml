@@ -40,5 +40,8 @@ jobs:
       - name: Run arm64 debian container
         run: |
           docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+          ls -l /proc/sys/fs/binfmt_misc
+          sudo cat /proc/sys/fs/binfmt_misc/qemu-aarch64
           docker run --rm arm64v8/debian ls -l /
           docker run --rm arm64v8/python:3.7-buster python --version
+          docker run --rm arm64v8/debian uname -a
