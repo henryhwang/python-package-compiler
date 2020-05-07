@@ -27,4 +27,4 @@ jobs:
           python -m pip install .
       - name: Checck the results
         run: |
-          ls -l ./dist
+          ls -l .
