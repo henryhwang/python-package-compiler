@@ -20,8 +20,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get build-dep python-matplotlib
+          sudo apt update
+          sudo apt -y python-matplotlib
       - name: Build package
         run: |
           python -m pip install .
