@@ -1,3 +1,7 @@
+name: Demo
+on:
+  [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,9 +19,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-      	run: sudo apt-get build-dep python-matplotlib
+        run: |
+          sudo apt-get build-dep python-matplotlib
       - name: Build package
-      	run: python -m pip install .
+        run: |
+          python -m pip install .
       - name: Checck the results
-      	run: ls -l ./dist
-        
+        run: |
+          ls -l ./dist
