@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo cat /etc/apt/sources.list
-          sudo ls -l /etcapt/sources.list.d
+          sudo ls -l /etc/apt/sources.list.d
           sudo apt update
           sudo apt-get build-dep python-matplotlib
       - name: Build package
