@@ -7,9 +7,9 @@ jobs:
     name: Python ${{ matrix.python-version }} package compiler
     steps:
       - name: Check out package source code
-      	uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
-        	repository: matplotlib/matplotlib
+          repository: matplotlib/matplotlib
       - name: Setup python
         uses: actions/setup-python@v2
         with:
