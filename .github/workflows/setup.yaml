@@ -33,6 +33,6 @@ jobs:
           docker --version
           uname -r
           ls /proc/sys/fs/binfmt_misc
-          sudp aptget install -y qemu-user-static
+          sudo apt-get install -y qemu-user-static
           ls -l /usr/bin/qemu-*-static
           qemu-aarch64-static -version
