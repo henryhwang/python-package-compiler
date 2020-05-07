@@ -24,7 +24,7 @@ jobs:
           sudo apt install -y python-matplotlib
       - name: Build package
         run: |
-          python -m pip install .
+          echo "python -m pip install ."
       - name: Checck the results
         run: |
           ls -l .
@@ -38,5 +38,5 @@ jobs:
           qemu-aarch64-static -version
       - name: Run arm64 debian container
         run: |
-          docker run --rm arm64v8/debian uname -a
+          docker run --rm arm64v8/debian ls -l /
           docker run --rm arm64v8/python python --version
