@@ -3,6 +3,14 @@ on:
   [push]
   
 jobs:
+  build-native:
+    runs-on: ubuntu-latest
+    name: Build matplotlib for x86
+    container: python:3.7-buster
+    steps:
+      - run: |
+          pip wheel matplotlib
+          pip list
   build:
     runs-on: ubuntu-latest
     name: Build matplotlib package into wheel for arm64
