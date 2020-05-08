@@ -12,4 +12,4 @@ jobs:
           docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - name: Build package in python container
         run: |
-          docker run --rm arm64v8/python:3.7-buster bash -c "python -m pip install matplotlib && pip list local"
+          docker run --rm -t arm64v8/python:3.7-buster bash -c "python -m pip install matplotlib && pip list local"
