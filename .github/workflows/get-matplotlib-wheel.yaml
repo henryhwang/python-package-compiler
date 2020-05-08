@@ -14,10 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build matplotlib package into wheel for arm64
+    container: arm64v8/python:3.7-buster
     steps:
       - name: Setup qemu
         run: |
-          sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-      - name: Build package in python container
-        run: |
-          sudo docker run --rm -t arm64v8/python:3.7-buster bash -c "python -m pip install matplotlib && pip list local"
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+      - run: |
+          python -m pip install matplotlib
+          pip list local
+
