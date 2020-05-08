@@ -2,3 +2,14 @@ name: Get Matplotlib Wheel
 on:
   [push]
   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build matplotlib package into wheel for arm64
+    steps:
+      - name: Setup qemu
+        run: |
+          docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+      - name: Build package in python container
+        run: |
+          docker run --rm arm64v8/python bash -c "python -m pip install matplotlib && pip list local"
