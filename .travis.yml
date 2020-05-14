@@ -12,10 +12,11 @@ before_install:
   - python -m pip install -U pip wheel setuptools
   - pip list
   - whoami
-  - ls -al /home/travis/.cache/pip/wheels
-  - python -m pip wheel cppy>=1.1.0 -w ./dist
+  - docker run --rm python bash -c "pip wheel matplotlib -w ./dist; ls -al ./dist"
+
+
 install:
-  - python -m pip wheel matplotlib -w ./dist
+
 script:
   - ls -al ./dist
   - pip list
