@@ -12,11 +12,11 @@ before_install:
   - python -m pip install -U pip wheel setuptools
   - pip list
   - whoami
-  - docker run --rm python bash -c "pip wheel matplotlib -w ./dist; ls -al ./dist"
+  - docker run --rm python bash -c "pip list; pip wheel matplotlib -w ./dist; ls -al ./dist"
 
 
 install:
 
 script:
-  - ls -al ./dist
+  - ls -al .
   - pip list
