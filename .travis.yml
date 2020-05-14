@@ -12,6 +12,6 @@ before_install:
   - pip install -U pip wheel setuptools
   - pip list
 install:
-  - pip install matplotlib
+  - sudo pip install matplotlib
 script:
   - pip list
