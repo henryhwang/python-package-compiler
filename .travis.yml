@@ -6,7 +6,8 @@ arch: arm64
 
 before_install:
   - pip list
-  - ls -al ./.cache/pip
+  - pwd
+  - ls -al ~
   - ls -al ~/.cache/pip/wheels
 
 install:
