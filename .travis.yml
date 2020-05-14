@@ -12,7 +12,7 @@ before_install:
   - pip install -U pip wheel setuptools
   - pip list
 install:
-  - pip wheel matplotlib -w ./dist
+  - python pip wheel matplotlib -w ./dist
 script:
-  - ls -al .
+  - ls -al ./dist
   - pip list
