@@ -1,5 +1,5 @@
 language: python
-python: 3.7
+
 os: linux
 dist: bionic
 arch: arm64
@@ -7,7 +7,7 @@ arch: arm64
 before_install:
   - pip list
   - pwd
-  - ls -al ~
+  - echo $HOME
   - ls -al ~/.cache/pip/wheels
 
 install:
